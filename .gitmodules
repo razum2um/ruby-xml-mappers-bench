@@ -1,0 +1,3 @@
+[submodule "xml-mapping"]
+	path = xml-mapping
+	url = https://github.com/multi-io/xml-mapping.git
