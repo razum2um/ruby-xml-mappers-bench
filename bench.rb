@@ -7,6 +7,7 @@ Bundler.load
 require 'dsl_parsers'
 require 'pry-byebug'
 require 'rspec'
+require 'benchmark/ips'
 
 XMLFILE = File.read(File.expand_path('../xml/order.xml', __FILE__)).freeze
 
@@ -150,5 +151,15 @@ Suite = RSpec.describe 'results' do
         end
       end
     end
+  end
+end
+
+###
+
+def bench
+  Benchmark.ips do |x|
+    x.report('dsl mapping') { parse_dsl_parsers }
+    x.report('xml mapping') { parse_xml_mapping }
+    x.compare!
   end
 end
