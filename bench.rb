@@ -158,8 +158,8 @@ end
 
 def bench
   Benchmark.ips do |x|
-    x.report('dsl mapping') { parse_dsl_parsers }
-    x.report('xml mapping') { parse_xml_mapping }
+    x.report('dsl_parsers') { parse_dsl_parsers }
+    x.report('xml-mapping') { parse_xml_mapping }
     x.compare!
   end
 end
