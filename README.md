@@ -24,10 +24,9 @@ nokogiri_dsl_parsers:      913.4 i/s - 5.05x slower
 # Replicate
 
 ```sh
-pry -r ./bench.rb
-bench
+ruby bench.rb
 ```
 
 ```
-rspec bench.rb
+rspec spec.rb
 ```
